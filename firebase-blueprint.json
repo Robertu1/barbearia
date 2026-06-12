@@ -1,0 +1,167 @@
+{
+  "entities": {
+    "User": {
+      "title": "User Profile",
+      "description": "Represents a BarberSpace registered client profile",
+      "type": "object",
+      "properties": {
+        "uid": {
+          "type": "string",
+          "description": "The unique Firebase Authentication user ID"
+        },
+        "name": {
+          "type": "string",
+          "description": "User's full name"
+        },
+        "email": {
+          "type": "string",
+          "format": "email",
+          "description": "User's email address"
+        },
+        "phone": {
+          "type": "string",
+          "description": "User's contact phone number"
+        }
+      },
+      "required": ["uid", "name", "email", "phone"]
+    },
+    "Appointment": {
+      "title": "Appointment",
+      "description": "Represents a haircut or grooming booking",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "The unique ID of the booking"
+        },
+        "userId": {
+          "type": "string",
+          "description": "UID of the client who booked"
+        },
+        "barberName": {
+          "type": "string",
+          "description": "Name of the service provider"
+        },
+        "serviceName": {
+          "type": "string",
+          "description": "Name or combination of services of the booking"
+        },
+        "price": {
+          "type": "number",
+          "description": "Cost of the booking in Brazilian Reais (R$)"
+        },
+        "date": {
+          "type": "string",
+          "format": "date",
+          "description": "Date of the booking (YYYY-MM-DD)"
+        },
+        "time": {
+          "type": "string",
+          "description": "Selected timeslot (e.g. 14:00)"
+        },
+        "status": {
+          "type": "string",
+          "enum": ["scheduled", "finished", "canceled"],
+          "description": "Current status of the booking"
+        },
+        "notes": {
+          "type": "string",
+          "description": "Optional custom requests"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Timestamp when this booking was created"
+        }
+      },
+      "required": ["id", "userId", "barberName", "serviceName", "price", "date", "time", "status", "createdAt"]
+    },
+    "SaaSConfig": {
+      "title": "SaaS Tenant Customization",
+      "description": "Brand settings for the customized multi-tenant barbershop profile",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "The custom identifier for this barbershop tenant configuration (e.g., primary)"
+        },
+        "barbershopName": {
+          "type": "string",
+          "description": "Name of the customized barbershop"
+        },
+        "phone": {
+          "type": "string",
+          "description": "Main business contact phone"
+        },
+        "address": {
+          "type": "string",
+          "description": "Business physical address text"
+        },
+        "tagline": {
+          "type": "string",
+          "description": "Catchy phrase shown to clients"
+        },
+        "accentColor": {
+          "type": "string",
+          "enum": ["amber", "emerald", "crimson", "indigo", "slate"],
+          "description": "Brand theme color"
+        },
+        "openHours": {
+          "type": "string",
+          "description": "Display text of business working days and hours"
+        }
+      },
+      "required": ["id", "barbershopName", "phone", "address", "accentColor"]
+    },
+    "SaaSFeedback": {
+      "title": "SaaS Platform Feedback",
+      "description": "Feedback provided by barbershop owners testing the platform demo",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique feedback ticket ID"
+        },
+        "userEmail": {
+          "type": "string",
+          "description": "Email of the partner who submitted the feedback"
+        },
+        "rating": {
+          "type": "number",
+          "description": "SaaS platform usability rating on a scale from 1 to 5"
+        },
+        "likedMost": {
+          "type": "string",
+          "description": "What they liked most about the software"
+        },
+        "missingFeatures": {
+          "type": "string",
+          "description": "What feature they feel is most critical/missing"
+        },
+        "createdAt": {
+          "type": "string",
+          "description": "Timestamp when feedback was compiled"
+        }
+      },
+      "required": ["id", "userEmail", "rating", "likedMost", "missingFeatures"]
+    }
+  },
+  "firestore": {
+    "users/{userId}": {
+      "schema": "User",
+      "description": "Collection of user profile entries synced with Auth"
+    },
+    "appointments/{appointmentId}": {
+      "schema": "Appointment",
+      "description": "Global list of all user barber bookings"
+    },
+    "saas_config/{configId}": {
+      "schema": "SaaSConfig",
+      "description": "Branding customization attributes loaded globally by clients and updated by owners"
+    },
+    "saas_feedbacks/{feedbackId}": {
+      "schema": "SaaSFeedback",
+      "description": "List of SaaS test-trial feedback tickets submitted"
+    }
+  }
+}

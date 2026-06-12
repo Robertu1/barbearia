@@ -1,0 +1,6 @@
+{
+  "name": "BarberSpace",
+  "description": "Tela de login e registro interativa de alta fidelidade para a BarberSpace, com animações elegantes e design responsivo.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
