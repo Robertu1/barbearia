@@ -72,7 +72,7 @@ export default function App() {
   }
 
   return (
-    <div className="min-h-screen text-gray-100 flex items-center justify-center p-4 md:p-8 bg-[#050811] relative overflow-hidden font-sans">
+    <div className="min-h-screen text-gray-100 flex items-center justify-center p-0 sm:p-4 md:p-8 bg-brand-card sm:bg-[#050811] relative overflow-hidden font-sans">
       {/* Background Decorative Blobs */}
       <div className="absolute top-[-10%] right-[-10%] w-[50vw] h-[50vw] rounded-full bg-amber-600/10 filter blur-[120px] pointer-events-none"></div>
       <div className="absolute bottom-[-10%] left-[-10%] w-[50vw] h-[50vw] rounded-full bg-blue-900/10 filter blur-[120px] pointer-events-none"></div>
@@ -82,11 +82,11 @@ export default function App() {
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: 'easeOut' }}
-        className="w-full max-w-5xl rounded-2xl bg-brand-card shadow-[0_20px_50px_rgba(0,0,0,0.5)] border border-gray-800/60 overflow-hidden flex flex-col md:flex-row min-h-[600px] z-10"
+        className="w-full max-w-5xl rounded-none sm:rounded-2xl bg-brand-card shadow-none sm:shadow-[0_20px_50px_rgba(0,0,0,0.5)] border-0 sm:border border-gray-800/60 overflow-hidden flex flex-col md:flex-row min-h-screen sm:min-h-[600px] z-10"
         id="barber-auth-container"
       >
         {/* Left column: Branded/Aesthetic visual banner */}
-        <div className="md:w-1/2 bg-gradient-to-br from-brand-card to-brand-dark border-b md:border-b-0 md:border-r border-gray-800/80 p-8 md:p-12 flex flex-col justify-center items-center text-center relative overflow-hidden select-none shrink-0 min-h-[300px]">
+        <div className="md:w-1/2 bg-gradient-to-br from-brand-card to-brand-dark border-b md:border-b-0 md:border-r border-gray-800/80 p-8 md:p-12 flex flex-col justify-center items-center text-center relative overflow-hidden select-none shrink-0 min-h-[220px] md:min-h-[300px]">
           {/* Subtle grid pattern overlay */}
           <div className="absolute inset-0 opacity-5 bg-[linear-gradient(to_right,#808080_1px,transparent_1px),linear-gradient(to_bottom,#808080_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none"></div>
           
@@ -174,7 +174,7 @@ export default function App() {
         </div>
 
         {/* Right column: Form section */}
-        <div className="md:w-1/2 flex bg-white relative min-h-[400px] justify-center items-center">
+        <div className="md:w-1/2 flex bg-white relative flex-1 min-h-[400px] justify-center sm:items-center items-start">
           <AnimatePresence mode="wait">
             {view === 'login' && (
               <motion.div

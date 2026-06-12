@@ -95,8 +95,8 @@ export default function LoginView({ onSwitchView, onLoginSuccess }: LoginViewPro
 
 
   return (
-    <div className="w-full max-w-md px-4 sm:px-6 py-8 md:py-12 bg-white text-gray-900">
-      <div className="space-y-6">
+    <div className="w-full max-w-md px-6 sm:px-6 py-6 md:py-12 bg-white text-gray-900">
+      <div className="space-y-4">
         <div className="text-center">
           <h2 id="login-heading" className="text-3xl font-bold tracking-tight text-gray-900 font-display">
             Entrar
