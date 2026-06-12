@@ -123,7 +123,7 @@ export default function LoginView({ onSwitchView, onLoginSuccess }: LoginViewPro
             <span className="text-[10px] uppercase font-bold text-gray-400 tracking-wider block text-center">
               Selecione o seu perfil de acesso
             </span>
-            <div className="flex flex-col sm:grid sm:grid-cols-2 gap-2" id="login-role-switcher">
+            <div className="grid grid-cols-2 gap-2" id="login-role-switcher">
               <button
                 type="button"
                 id="login-role-client"
