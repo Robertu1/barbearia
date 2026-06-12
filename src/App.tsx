@@ -167,8 +167,8 @@ export default function App() {
             </AnimatePresence>
           </motion.div>
 
-          {/* Sotto bottom caption */}
-          <div className="absolute bottom-4 left-0 right-0 text-[10px] text-gray-600 text-center font-medium">
+          {/* Sotto bottom caption - hidden on mobile, shown in banner on desktop */}
+          <div className="hidden md:block absolute bottom-4 left-0 right-0 text-[10px] text-gray-600 text-center font-medium">
             © 2026 BarberSpace. Todos os direitos reservados.
           </div>
         </div>
@@ -225,6 +225,11 @@ export default function App() {
           </AnimatePresence>
         </div>
       </motion.div>
+
+      {/* Mobile-only copyright footer */}
+      <div className="md:hidden fixed bottom-0 left-0 right-0 text-[10px] text-gray-500 text-center font-medium py-2 bg-brand-card/80 backdrop-blur-sm z-20">
+        © 2026 BarberSpace. Todos os direitos reservados.
+      </div>
     </div>
   );
 }
