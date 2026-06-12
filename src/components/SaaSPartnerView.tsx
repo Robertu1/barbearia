@@ -233,7 +233,7 @@ export default function SaaSPartnerView({ userEmail, onConfigChanged }: SaaSPart
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-gray-800 pb-4">
           <div className="text-left space-y-1">
             <h3 className="text-lg font-bold font-display text-white">Fila Integrada de Atendimentos</h3>
-            <p className="text-xs text-gray-400">Simule o dia-a-dia da barbearia atendendo os agendamentos dos clientes</p>
+            <p className="text-xs text-gray-400">Gerencie os atendimentos, finalize cortes e acompanhe o histórico em tempo real.</p>
           </div>
           
           <button
