@@ -142,9 +142,9 @@ export default function App() {
                   transition={{ duration: 0.3 }}
                   className="mt-6"
                 >
-                  <h3 className="text-lg font-bold text-gray-100 font-display">Junte-se à BarberSpace</h3>
+                  <h3 className="text-lg font-bold text-gray-100 font-display">Crie sua conta</h3>
                   <p className="mt-2 text-sm text-gray-400 max-w-xs leading-relaxed text-center">
-                    Crie uma conta para garantir horários exclusivos, cartão fidelidade e o melhor atendimento da região.
+                    Acesse todos os recursos da plataforma e tenha o controle na palma da sua mão.
                   </p>
                 </motion.div>
               )}
